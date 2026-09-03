@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Nepal–Tibet flood — livestream follow-along</title>
+  <meta name="theme-color" content="#111111" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <style>
+    :root {
+      --orange:#FF5C00;
+      --orange2:#FF5C00;
+      --black:#111111;
+      --gray:#1C1C1C;
+      --gray2:#2A2A2A;
+      --line:#D8D8D8;
+      --ink:#111111;
+      --muted:#6B6B6B;
+      --paper:#F3F3F3;
+      --card:#FFFFFF;
+      --shadow:0 10px 28px rgba(0,0,0,.08);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--paper); color:var(--ink); line-height:1.45; }
+    a { color:var(--orange); }
+    header {
+      background:var(--black);
+      color:#fff;
+      padding:0 0 1.25rem;
+      border-bottom:3px solid var(--orange);
+    }
+    header .banner {
+      display:block; width:100%; height:92px; object-fit:cover; object-position:center;
+      border-bottom:1px solid #2A2A2A;
+    }
+    header .brandrow {
+      display:flex; align-items:center; gap:.85rem;
+      max-width:880px; margin:0 auto; padding:1rem 1rem 0;
+    }
+    header .logo {
+      width:72px; height:72px; border-radius:50%;
+      border:3px solid var(--orange); object-fit:cover; background:#222; flex:0 0 auto;
+    }
+    header .wordmark { min-width:0; }
+    header .wordmark .lockup {
+      display:inline-block; background:#fff; color:var(--black);
+      font-weight:900; letter-spacing:.02em; line-height:1; padding:.18rem .42rem .14rem;
+      font-size:.72rem;
+    }
+    header .wordmark .name {
+      display:block; background:#fff; color:var(--orange);
+      font-weight:900; letter-spacing:-.03em; font-size:clamp(1.15rem,4.2vw,1.7rem);
+      line-height:1; padding:.12rem .42rem .18rem; margin-top:2px;
+    }
+    .wrap { max-width:880px; margin:0 auto; padding:0 1rem 5rem; }
+    header .wrap { padding-top:.85rem; padding-bottom:0; }
+    .kicker { letter-spacing:.14em; font-size:.68rem; color:#B0B0B0; text-transform:uppercase; }
+    h1 { margin:.35rem 0 .4rem; font-size:clamp(1.35rem,4.4vw,2.05rem); line-height:1.12; color:#fff; }
+    header p { margin:0; color:#C8C8C8; max-width:44rem; }
+    nav.jump { position:sticky; top:0; z-index:30; background:rgba(17,17,17,.94); backdrop-filter:blur(12px); border-bottom:1px solid #2A2A2A; }
+    nav.jump .row { display:flex; gap:.4rem; overflow-x:auto; padding:.55rem 1rem; max-width:880px; margin:0 auto; -webkit-overflow-scrolling:touch; }
+    nav.jump a { flex:0 0 auto; text-decoration:none; font-size:.74rem; font-weight:700; color:#fff; background:var(--gray2); border:1px solid #3A3A3A; border-radius:999px; padding:.34rem .7rem; }
+    nav.jump a:hover { border-color:var(--orange); color:var(--orange); }
+    section { padding:1.4rem 0 0; }
+    h2 { margin:0 0 .55rem; font-size:1.18rem; color:var(--black); }
+    h3 { margin:.15rem 0 .4rem; font-size:.98rem; color:var(--black); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1rem 1.05rem; box-shadow:var(--shadow); margin:.65rem 0; }
+    .tag { display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--orange); }
+    .tag.teal { color:var(--orange); }
+    .look { margin:.35rem 0 .75rem; }
+    .btns { display:flex; flex-wrap:wrap; gap:.42rem; }
+    .btn { display:inline-block; text-decoration:none; font-weight:750; font-size:.82rem; padding:.52rem .76rem; border-radius:10px; background:var(--black); color:#fff; }
+    .btn.alt { background:#fff; color:var(--black); border:1px solid var(--line); }
+    .btn.amber { background:var(--orange); color:#fff; }
+    .btn.teal { background:var(--gray2); color:#fff; }
+    .tiny { font-size:.78rem; color:var(--muted); margin:.5rem 0 0; }
+    .payoff { background:#FFF4EC; border:1px solid #F2C2A0; border-radius:12px; padding:.85rem 1rem; font-size:.92rem; }
+    .payoff strong { color:var(--black); }
+    .warn { background:#FFF4EC; border:1px solid #F2C2A0; border-radius:12px; padding:.85rem 1rem; font-size:.9rem; }
+    footer { margin-top:1.6rem; font-size:.78rem; color:var(--muted); }
+    blockquote { margin:.4rem 0 .7rem; padding:.55rem .75rem; border-left:3px solid var(--orange); background:#fff; font-size:.92rem; color:#333; }
+    table { width:100%; border-collapse:collapse; font-size:.86rem; }
+    th, td { text-align:left; padding:.4rem .35rem; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--black); font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; }
+    .num { font-variant-numeric:tabular-nums; font-weight:800; color:var(--orange); }
+    .embed { position:relative; width:100%; height:0; padding-bottom:56.25%; margin:.55rem 0 .15rem; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#111; }
+    .embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .clock { font-variant-numeric:tabular-nums; font-weight:800; color:var(--orange); }
+
+  </style>
+</head>
+<body>
+    <header>
+    <img class="banner" src="brand/banner.jpg" alt="TriggerSmart YouTube banner" />
+    <div class="brandrow">
+      <img class="logo" src="brand/logo.jpg" alt="TriggerSmart logo" />
+      <div class="wordmark">
+        <span class="lockup">THE</span>
+        <span class="name">TRIGGERSMART</span>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="kicker">Audience companion · August 26, 2026 Rasuwa / Gyirong flood</div>
+      <h1>Ice, rock, tunnels — what the documents actually show</h1>
+      <p>Every clip and article in livestream script order. Alleged throughout. Not a finding that anyone blasted the mountain.</p>
+    </div>
+  </header>
+
+
+  <nav class="jump" aria-label="Jump">
+    <div class="row">
+      <a href="#intro">Intro</a>
+      <a href="#s1">7 minutes</a>
+      <a href="#s2">Rock</a>
+      <a href="#s3">2025</a>
+      <a href="#s4">Tunnels</a>
+      <a href="#s5">Claims</a>
+      <a href="#s6">Warning</a>
+      <a href="#s7">Who</a>
+      <a href="#s8">Open</a>
+      <a href="#outro">Outro</a>
+      <a href="#list">All 67</a>
+      <a href="#docs">Docs</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <section id="setup">
+      <div class="warn">
+        Keep this HTML and the <code>docs/</code> folder in the same unzipped directory. Numbered buttons are the script’s first-appearance links in order. Local snapshots in <code>docs/</code> are convenience copies of open pages — the live URL is still the source of record. Reuters / NYT / WSJ / some Indian publishers may bot-wall an automated fetch and still open in a browser.
+      </div>
+    </section>
+
+    <section id="intro">
+      <h2>Intro — the wall at 10:59:53</h2>
+      <div class="card">
+        <span class="tag">Play first</span>
+        <p class="look">Gyirong Port CCTV. People walking. Then ice, mud, boulders, water. Seven minutes earlier a rock-and-ice mass let go at about 5,200 m on the north face of Langtang Lirung. USGS first called the shake a magnitude 4.4 earthquake, then took it back: the collapse <em>was</em> the signal (M5.2).</p>
+        <div class="embed">
+          <iframe src="https://www.youtube.com/embed/fqxOIZlj_0M" title="AFP Gyirong CCTV" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="tiny">#01 AFP · under 2 minutes</p>
+        <div class="embed">
+          <iframe src="https://www.youtube.com/embed/FFYBmDYQqoA" title="Independent CCTV package" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="tiny">#02 Independent backup</p>
+        <div class="btns">
+<a class="btn amber" href="https://www.youtube.com/watch?v=fqxOIZlj_0M" target="_blank" rel="noopener">#01 AFP Gyirong Port CCTV</a>
+<a class="btn amber" href="https://www.youtube.com/watch?v=FFYBmDYQqoA" target="_blank" rel="noopener">#02 Independent CCTV package</a>
+<a class="btn alt" href="https://www.snopes.com/fact-check/china-nepal-border-flooding/" target="_blank" rel="noopener">#03 Snopes: footage authentic</a>
+<a class="btn alt" href="https://apnews.com/article/climate-change-nepal-tibet-glacier-collapse-floods-61b592d428e4631add31ce052d0daf1f" target="_blank" rel="noopener">#04 AP — USGS M5.2 collapse, not quake</a>
+<a class="btn alt" href="https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for" target="_blank" rel="noopener">#05 Kathmandu Post Sept 3 toll</a>
+</div>
+        <p class="tiny">As of Sept 3 reporting used on air: Nepal 1,252 dead / 4,216 missing. Tibet about 21 dead / ~540 missing. Counts still move.</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>Section 1 — Seven minutes the cameras can prove</h2>
+      <div class="card">
+        <span class="tag">Clock</span>
+        <p class="look">Gyirong / Kerung is the overland gate. Almost no shelf. Road, dry port, immigration, truck queue sit in the same slot the river uses.</p>
+        <p class="look"><span class="clock">08:35:03</span> Nepal — last Rasuwagadhi immigration swipe. 89 outbound already cleared. Four just entered.</p>
+        <p class="look"><span class="clock">08:37</span> — seismic spike. Later attributed to the collapse, not a tectonic quake.</p>
+        <p class="look"><span class="clock">~6–7 min</span> — Guo Zhaocheng: about 50 m/s. CCTV <span class="clock">10:59:53</span> Tibet time.</p>
+        <p class="look">Tika Ram Pokharel survived because he was sitting an exam in Kathmandu. Four colleagues, including the office head, missing.</p>
+        <div class="btns">
+<a class="btn alt" href="https://www.indiatoday.in/world/story/gyirong-port-flood-cctv-tibet-border-mudslide-nepal-missing-travellers-2980448-2026-08-26" target="_blank" rel="noopener">#06 India Today parking deck</a>
+<a class="btn alt" href="https://www.nytimes.com/interactive/2026/08/26/world/asia/nepal-china-flash-flood.html" target="_blank" rel="noopener">#07 NYT interactive path</a>
+<a class="btn alt" href="https://www.reuters.com/graphics/NEPAL-FLOODS/MAP/byvrdywwlve/" target="_blank" rel="noopener">#08 Reuters collapse-to-flood map</a>
+<a class="btn alt" href="https://www.bbc.com/news/articles/c0qxw1qw3g7o" target="_blank" rel="noopener">#09 BBC final minutes</a>
+<a class="btn alt" href="https://www.reuters.com/business/environment/rescuers-search-survivors-after-devastating-nepal-flood-2026-08-27/" target="_blank" rel="noopener">#10 Reuters search / Guo speed</a>
+<a class="btn amber" href="https://www.abc.net.au/news/2026/08-27/nepal-tibet-floods-landslide-maps-photos-videos/107083300" target="_blank" rel="noopener">#11 ABC mapped CCTV package</a>
+<a class="btn teal" href="https://x.com/Geotactix/status/2095033208912130180" target="_blank" rel="noopener">#12 X GeoPanda dam-talk</a>
+<a class="btn teal" href="https://x.com/amitv6hb/status/2095553699280191916" target="_blank" rel="noopener">#13 X natural or manmade</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> The camera does not lie about speed. Anything that claims “they had hours” has to beat this clock.</div>
+    </section>
+
+    <section id="s2">
+      <h2>Section 2 — Not just ice. The rock failed.</h2>
+      <div class="card">
+        <span class="tag teal">Cross-section</span>
+        <p class="look">Langtang Lirung peak &gt; 7,200 m. Failure about 5,200 m on the north face. Drop on the order of 1,200 m into the Lhende Khola. Kristen Cook: “The rock that the glacier was sitting on collapsed.”</p>
+        <p class="look">Sentinel-2 Aug 24: snout intact. Landsat-9 Aug 26: the scar. Nepali Times: Chinese drone apparently recorded the rupture live.</p>
+        <p class="look">USGS path: M4.4 earthquake product, then reclass to M5.2 collapse/debris flow. ICIMOD hydrology: Trishuli +9 m in 30 minutes at Galchhi, +7 m at Malekhu.</p>
+        <div class="btns">
+<a class="btn alt" href="https://www.nytimes.com/2026/08/27/world/asia/nepal-flood-cause-landslide-glacier-collapse.html" target="_blank" rel="noopener">#14 NYT Cook / Shugar bedrock</a>
+<a class="btn alt" href="https://www.usnews.com/news/world/articles/2026-08-27/scientists-find-clues-in-satellite-imagery-to-the-cause-of-catastrophic-floods-in-nepal-and-tibet" target="_blank" rel="noopener">#15 US News satellite scientists</a>
+<a class="btn alt" href="https://www.firstpost.com/world/nepal-flood-tibet-glacier-collapse-langtang-lirung-mountain-slope-failure-landslide-satellite-imagery-14042031.html" target="_blank" rel="noopener">#16 Firstpost / Takshashila</a>
+<a class="btn alt" href="https://news.cgtn.com/news/2026-09-01/Facts-and-science-behind-the-Nepal-mudslide-1Q5EL4kWiOI/p.html" target="_blank" rel="noopener">#17 CGTN science narrative</a>
+<a class="btn alt" href="https://www.news18.com/explainers/liquid-concrete-flood-how-a-glacier-broke-off-and-plunged-1-2-km-to-devastate-nepal-ws-l-10297557.html" target="_blank" rel="noopener">#18 News18 Aug 24 vs 26 frames</a>
+<a class="btn alt" href="https://www.wsj.com/science/environment/see-how-the-deadly-flooding-in-nepal-and-china-unfolded-93c25a12" target="_blank" rel="noopener">#19 WSJ reconstruction</a>
+<a class="btn alt" href="https://nepalitimes.com/nepal-avalanche-was-live-on-drone-camera" target="_blank" rel="noopener">#20 Nepali Times drone camera</a>
+<a class="btn alt" href="https://theprint.in/feature/nepal-rasuwa-floods-glacial-collapse-usgs/3026053/" target="_blank" rel="noopener">#21 ThePrint USGS revision</a>
+<a class="btn alt" href="https://www.smh.com.au/world/asia/a-terrifying-roar-then-came-the-fury-of-the-flood-how-disaster-unfolded-in-nepal-20260827-p60s6n.html" target="_blank" rel="noopener">#22 SMH / Petley seismic read</a>
+<a class="btn alt" href="https://theconversation.com/when-a-mountain-falls-how-ice-and-rock-triggered-nepals-catastrophic-flood-and-why-climate-change-is-raising-the-risks-290779" target="_blank" rel="noopener">#23 The Conversation cascade</a>
+<a class="btn alt" href="https://www.downtoearth.org.in/natural-disasters/did-an-ice-rock-avalanche-originating-from-a-high-altitude-area-trigger-the-trishuli-flash-flood" target="_blank" rel="noopener">#24 Down to Earth / ICIMOD +9 m</a>
+<a class="btn alt" href="https://thediplomat.com/2026/08/flash-flood-devastates-china-nepal-border-region/" target="_blank" rel="noopener">#25 Diplomat / NDRRMA Planet Labs</a>
+<a class="btn alt" href="https://www.nature.com/articles/d41586-026-02716-w" target="_blank" rel="noopener">#26 Nature 2026 vs 2015</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> Ask where the blast is on the seismogram — and why USGS, NDRRMA, ICIMOD, and the Chinese Academy landed on a slope failure at 5,200 m.</div>
+    </section>
+
+    <section id="s3">
+      <h2>Section 3 — Same river, July 2025, different trigger</h2>
+      <div class="card">
+        <span class="tag">Second event</span>
+        <p class="look">July 8, 2025: Pyurepu Glacier supraglacial lake on the Tibetan side drains in a day. Classic GLOF. Friendship Bridge gone. Crossing closed ~6 months. Reopened January 1, 2026.</p>
+        <p class="look">August 26, 2026: ice-rock + bedrock off Langtang Lirung on the Nepal side. Same Lhende Khola. ICIMOD’s Saswata Sanyal: second catastrophe in 14 months.</p>
+        <div class="btns">
+<a class="btn alt" href="https://english.khabarhub.com/2025/10/484718/" target="_blank" rel="noopener">#27 Khabarhub 2025 Pyurepu GLOF</a>
+<a class="btn alt" href="https://apnews.com/article/climate-change-nepal-flash-floods-7262dac22e31258955efa5c28c8fe917" target="_blank" rel="noopener">#28 AP twice in 14 months</a>
+<a class="btn alt" href="https://www.indiatoday.in/world/story/nepal-flash-floods-icimod-says-ice-rock-avalanche-from-tibet-likely-trigger-ptag-2980684-2026-08-26" target="_blank" rel="noopener">#29 India Today ICIMOD quote</a>
+<a class="btn alt" href="https://www.nytimes.com/2026/08/31/world/asia/china-nepal-tibet-flood-himalayas-risk.html" target="_blank" rel="noopener">#30 NYT China prepared for one disaster</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> Two floods, one gorge, two mechanisms. A single “they blew a dam in August” story has to explain both scars.</div>
+    </section>
+
+    <section id="s4">
+      <h2>Section 4 — Tunnels that are real, blasting that is rescue</h2>
+      <div class="card">
+        <span class="tag">Altitude test</span>
+        <p class="look">Two true nouns welded to the wrong verb. Hydropower diversion tunnels sit at river level: Rasuwagadhi 111 MW, Upper Trishuli-1 216 MW, Trishuli 3A/3B, Chilime. Peak missing-worker count around 933. Controlled explosions in the paper are Nepal Army rescue blasts after August 26, not a construction shot at 5,200 m.</p>
+        <p class="look">As of Sept 3, officials still hoped 46 people were alive in a Rasuwagadhi tunnel chamber with food and water. Thermal drones did not settle it.</p>
+        <blockquote>The only flat ground in the gorge held a border crossing, a customs yard, a truck park, and hydropower works.</blockquote>
+        <div class="btns">
+<a class="btn alt" href="https://www.theguardian.com/world/2026/sep/03/nepal-floods-rasuwagadhi-hydropower-hydro-tunnel-trapped-workers-search-rescue" target="_blank" rel="noopener">#31 Guardian Rasuwagadhi chamber</a>
+<a class="btn alt" href="https://www.reuters.com/world/china/good-chance-that-trapped-workers-are-still-alive-nepal-hydropower-plant-official-2026-09-02/" target="_blank" rel="noopener">#32 Reuters workers may be alive</a>
+<a class="btn alt" href="https://www.nytimes.com/2026/08/29/world/asia/nepal-flood-hydropower-tunnels-rescue-missing-workers.html" target="_blank" rel="noopener">#33 NYT boring into tunnels</a>
+<a class="btn alt" href="https://www.aljazeera.com/news/2026/8/31/nepal-tunnel-traps-hinder-flood-rescue-how-many-are-dead-or-missing" target="_blank" rel="noopener">#34 Al Jazeera tunnel explainer</a>
+<a class="btn alt" href="https://english.onlinekhabar.com/hydropower-project-tunnel-rescue.html" target="_blank" rel="noopener">#35 OnlineKhabar seven-day status</a>
+<a class="btn alt" href="https://www.cnn.com/2026/08/30/asia/nepal-workers-flooded-hydro-tunnel-intl" target="_blank" rel="noopener">#36 CNN tunnel survivor</a>
+<a class="btn alt" href="https://www.independent.co.uk/asia/south-asia/nepal-floods-hydropower-tunnels-trapped-workers-b3042308.html" target="_blank" rel="noopener">#37 Independent controlled explosions</a>
+<a class="btn alt" href="https://en.wikipedia.org/wiki/2026_Nepal_floods" target="_blank" rel="noopener">#38 Wikipedia 2026 Nepal floods</a>
+<a class="btn alt" href="https://www.theguardian.com/world/2026/aug/31/nepal-tibet-floods-rescuers-hundreds-trapped-hydropower" target="_blank" rel="noopener">#39 Guardian Aug 31 tunnel focus</a>
+<a class="btn teal" href="https://x.com/uniindianews/status/2095036366841327711" target="_blank" rel="noopener">#40 X UNI India tunnel flight</a>
+<a class="btn teal" href="https://x.com/OnlineKhabar_En/status/2095481546400784773" target="_blank" rel="noopener">#41 X ambassador at Chilime</a>
+<a class="btn alt" href="https://www.indiatoday.in/world/story/rasuwagadhi-tunnel-rescue-nepal-no-survivors-933-workers-missing-2983871-2026-08-31" target="_blank" rel="noopener">#42 India Today thermal drone</a>
+<a class="btn alt" href="https://www.telegraph.co.uk/world-news/2026/09/02/how-nepal-floods-became-ideological-battleground/" target="_blank" rel="noopener">#43 Telegraph gorge / ideology</a>
+<a class="btn alt" href="https://www.stimson.org/2026/a-cascading-disaster-on-the-china-nepal-border-what-to-know-about-the-august-2026-rasuwa-flood/" target="_blank" rel="noopener">#44 Stimson 72-hour briefing</a>
+<a class="btn teal" href="https://x.com/Zindagi262828/status/2095145019187622023" target="_blank" rel="noopener">#45 X Rasuwagadhi rescue video</a>
+<a class="btn teal" href="https://x.com/ChrisWickNews/status/2095527236359062001" target="_blank" rel="noopener">#46 X Chris Wick climate threshold</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> Make them specify the altitude. Tunnels: river. Blasting: rescue. Scar: 5,200 m.</div>
+    </section>
+
+    <section id="s5">
+      <h2>Section 5 — Manmade claims, run as leads</h2>
+      <div class="card">
+        <span class="tag">Four claims</span>
+        <p class="look"><strong>A. Chinese dam burst.</strong> Embassy in Kathmandu called it fake news. Satellite geometry is a missing mountainside on Langtang Lirung, not an empty reservoir.</p>
+        <p class="look"><strong>B. Medog / Yarlung Tsangpo mega-project.</strong> Wrong river, wrong basin, on the order of 600 miles away. Inference dressed as a receipt.</p>
+        <p class="look"><strong>C. Highway / railway blasting weakened this face.</strong> Opinion essays exist. Takshashila: no major construction at this specific northern slope. Say it: inference, not established fact.</p>
+        <p class="look"><strong>D. Secret tunnels under the glacier.</strong> Published projects are river hydropower, a proposed rail alignment, and the Belt and Road port. No primary blast schedule at the failure elevation turned up for this script.</p>
+        <p class="look">Separate fact: China Digital Times documented topic-muting and rumor punishments after Gyirong. Censorship is not a borehole log.</p>
+        <div class="btns">
+<a class="btn alt" href="https://www.ndtv.com/world-news/nepal-flash-floods-did-chinas-geological-disaster-dam-cause-floods-in-nepal-beijing-replies-11965346" target="_blank" rel="noopener">#47 NDTV embassy dam denial</a>
+<a class="btn alt" href="https://www.moneycontrol.com/world/fake-news-china-rejects-nepal-s-dam-collapse-claim-over-flash-floods-that-killed-over-170-article-14016768.html" target="_blank" rel="noopener">#48 Moneycontrol fake-news denial</a>
+<a class="btn alt" href="https://www.chinadaily.com.cn/a/202608/28/WS6a91ab0be4b06d4aa055b198.html" target="_blank" rel="noopener">#49 China Daily embassy + USGS</a>
+<a class="btn alt" href="https://unbiasedgeopolitics.org/article/untitled-article-18" target="_blank" rel="noopener">#50 Opinion essay — not a filing</a>
+<a class="btn alt" href="https://chinadigitaltimes.net/2026/09/information-controls-follow-catastrophic-flooding-in-gyirong-on-the-china-nepal-border/" target="_blank" rel="noopener">#51 China Digital Times controls</a>
+<a class="btn teal" href="https://x.com/PranabG9317960/status/2095331897220210994" target="_blank" rel="noopener">#52 X Chinese works as imbalance</a>
+<a class="btn teal" href="https://x.com/Talk_2_Sammy/status/2095484259914150283" target="_blank" rel="noopener">#53 X should be investigated</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> Claims C and D are a yellow dead end until someone produces a primary record at the failure elevation.</div>
+    </section>
+
+    <section id="s6">
+      <h2>Section 6 — The warning that could not arrive in seven minutes</h2>
+      <div class="card">
+        <span class="tag teal">Two clocks</span>
+        <p class="look">Physics clock: six to seven minutes to Gyirong, which <em>is</em> the first settlement. Institutional clock: May 2026 Kathmandu meeting. Nepal asked for glacier and water data. China says it shared “in a timely manner.” Two Nepali officials later told Reuters they did not get much.</p>
+        <p class="look">Lake sensors would have helped in July 2025. They were the wrong instrument for an ice-rock avalanche. Secondary debris lakes then paused rescue.</p>
+        <div class="btns">
+<a class="btn alt" href="https://www.reuters.com/business/environment/before-flood-catastrophe-nepal-asked-china-early-warnings-risks-mounted-2026-08-30/" target="_blank" rel="noopener">#54 Reuters May early-warning meeting</a>
+<a class="btn alt" href="https://www.techtimes.com/articles/325767/20260827/glacier-collapse-killed-353-nepal-current-warning-systems-cannot-detect-it.htm" target="_blank" rel="noopener">#55 TechTimes sensors / unsigned pact</a>
+<a class="btn alt" href="https://india.mongabay.com/2026/08/nepal-disaster-reinforces-the-need-for-regional-preparedness/" target="_blank" rel="noopener">#56 Mongabay regional strategy</a>
+<a class="btn alt" href="https://www.ndtv.com/india-news/key-mountain-development-institute-warns-of-second-flood-in-nepal-11963669" target="_blank" rel="noopener">#57 NDTV Zhang second-flood warning</a>
+<a class="btn alt" href="https://www.cnn.com/2026/08/28/china/china-secondary-disaster-flood-lake-breach-intl-hnk" target="_blank" rel="noopener">#58 CNN barrier lake</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> “Why didn’t they warn us” and “the mountain gave no warning” can both be true. Missing instrument, right slope.</div>
+    </section>
+
+    <section id="s7">
+      <h2>Section 7 — Who was standing in the channel</h2>
+      <div class="card">
+        <span class="tag">Categories</span>
+        <p class="look">Pilgrims (Kailash season; India later ~275 missing in Nepal; China 261 foreigners from 23 countries in Tibet). Locals (Janai Purnima / Gosaikunda). Workers (279 pulled from hydro sites; South Korea flagged eight plant nationals on day one). Downstream body counts: Chitwan 355, Nawalparasi East 218, Nawalparasi West 208, Nuwakot 177, Rasuwa 127.</p>
+        <p class="look">19 bridges. ~40 km of highway. More than 10% of Nepal’s generation offline. Gyirong 27 buildings in 0.7 km². Friendship Bridge gone twice in 14 months.</p>
+        <div class="btns">
+<a class="btn alt" href="https://www.reuters.com/world/china/china-identifies-countries-261-foreigners-missing-himalayan-mudslide-2026-08-30/" target="_blank" rel="noopener">#59 Reuters 261 foreigners in Tibet</a>
+<a class="btn alt" href="https://www.aljazeera.com/news/2026/9/1/death-toll-from-devastating-floods-in-china-and-nepal-surpasses-1000" target="_blank" rel="noopener">#60 Al Jazeera toll past 1,000</a>
+<a class="btn alt" href="https://www.reuters.com/business/environment/nepal-flash-flood-washes-away-villages-project-sites-near-tibet-border-2026-08-26/" target="_blank" rel="noopener">#61 Reuters first day / SK workers</a>
+<a class="btn alt" href="https://www.thehindu.com/news/international/nepal-flash-floods-live-updates-death-toll-rescue-operations-missing-persons-helpline-number-september-3-2026/article71422150.ece" target="_blank" rel="noopener">#62 The Hindu Sept 3 district table</a>
+<a class="btn alt" href="https://newsonair.gov.in/nepal-tibet-flood-death-toll-rises-to-1250/" target="_blank" rel="noopener">#63 Akashvani / NDRRMA toll</a>
+<a class="btn alt" href="https://maritime-executive.com/article/flood-wipes-away-chinese-belt-and-road-border-port-in-nepal" target="_blank" rel="noopener">#64 Maritime Executive Belt and Road port</a>
+<a class="btn alt" href="https://timesofindia.indiatimes.com/world/south-asia/nepal-flash-floods-relatives-hold-symbolic-funerals-for-thousands-missing-as-toll-crosses-1243/articleshow/133725449.cms" target="_blank" rel="noopener">#65 Times of India symbolic rites</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> “Only 21 dead in Tibet” has to sit next to the plaza video and ~540 missing. “Border disaster” has to sit next to Chitwan.</div>
+    </section>
+
+    <section id="s8">
+      <h2>Section 8 — Proven, open, still moving</h2>
+      <div class="card">
+        <span class="tag">Ledger</span>
+        <p class="look">Proven in the public science/official stack: rock-and-ice failure on north Langtang Lirung; collapse generated the seismic signal; minutes to Gyirong then the Trishuli corridor; real hydropower tunnels and post-flood rescue blasts; July 2025 GLOF on the same river; May warning-architecture gap.</p>
+        <p class="look">Open: exact climate/permafrost mix; whether a brief landslide dam added a pulse; whether any county-level construction vibration weakened <em>this</em> face; why China’s confirmed-dead number stays in the low twenties.</p>
+        <div class="btns">
+<a class="btn alt" href="https://www.theclimatebrink.com/p/what-we-can-and-cannot-say-about" target="_blank" rel="noopener">#66 Climate Brink attribution limits</a>
+<a class="btn alt" href="https://thehimalayantimes.com/nepal/flood-danger-may-not-be-over-experts-warn-of-fresh-debris-flows-secondary-floods" target="_blank" rel="noopener">#67 Himalayan Times secondary-flow risk</a>
+<a class="btn alt" href="https://en.wikipedia.org/wiki/2026_Nepal_floods" target="_blank" rel="noopener">#38 Wikipedia 2026 Nepal floods</a>
+</div>
+      </div>
+      <div class="payoff"><strong>Payoff.</strong> A prepared citizen does not need a villain to see the danger. The villain-shaped hole is currently empty. The gorge is not.</div>
+    </section>
+
+    <section id="outro">
+      <h2>Outro</h2>
+      <div class="card">
+        <p class="look">The blasting in the record is the rescue. The tunnels in the record sit in the river. The failure scar sits in the sky. If a leak ever shows a blast pattern on that specific face, it goes on the desk the same way the USGS retraction did — as a document, not a vibe.</p>
+      </div>
+    </section>
+
+    <section id="list">
+      <h2>All 67 sources, first appearance only</h2>
+      <div class="card">
+        <p class="look">Exact order they first appear in <code>nepal-flood-livestream-script.txt</code>. Repeats later in the spoken script are not listed twice.</p>
+        <table>
+<thead><tr><th>#</th><th>Cue</th><th>Sec</th><th>Open</th></tr></thead><tbody>
+<tr id="src01"><td class="num">01</td><td>PLAY</td><td>Intro</td><td><a href="https://www.youtube.com/watch?v=fqxOIZlj_0M" target="_blank" rel="noopener">AFP Gyirong Port CCTV</a></td></tr>
+<tr id="src02"><td class="num">02</td><td>PLAY</td><td>Intro</td><td><a href="https://www.youtube.com/watch?v=FFYBmDYQqoA" target="_blank" rel="noopener">Independent CCTV package</a></td></tr>
+<tr id="src03"><td class="num">03</td><td>SHOW</td><td>Intro</td><td><a href="https://www.snopes.com/fact-check/china-nepal-border-flooding/" target="_blank" rel="noopener">Snopes: footage authentic</a></td></tr>
+<tr id="src04"><td class="num">04</td><td>SHOW</td><td>Intro</td><td><a href="https://apnews.com/article/climate-change-nepal-tibet-glacier-collapse-floods-61b592d428e4631add31ce052d0daf1f" target="_blank" rel="noopener">AP — USGS M5.2 collapse, not quake</a></td></tr>
+<tr id="src05"><td class="num">05</td><td>SHOW</td><td>Intro</td><td><a href="https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for" target="_blank" rel="noopener">Kathmandu Post Sept 3 toll</a></td></tr>
+<tr id="src06"><td class="num">06</td><td>SHOW</td><td>1</td><td><a href="https://www.indiatoday.in/world/story/gyirong-port-flood-cctv-tibet-border-mudslide-nepal-missing-travellers-2980448-2026-08-26" target="_blank" rel="noopener">India Today parking deck</a></td></tr>
+<tr id="src07"><td class="num">07</td><td>SHOW</td><td>1</td><td><a href="https://www.nytimes.com/interactive/2026/08/26/world/asia/nepal-china-flash-flood.html" target="_blank" rel="noopener">NYT interactive path</a></td></tr>
+<tr id="src08"><td class="num">08</td><td>SHOW</td><td>1</td><td><a href="https://www.reuters.com/graphics/NEPAL-FLOODS/MAP/byvrdywwlve/" target="_blank" rel="noopener">Reuters collapse-to-flood map</a></td></tr>
+<tr id="src09"><td class="num">09</td><td>SHOW</td><td>1</td><td><a href="https://www.bbc.com/news/articles/c0qxw1qw3g7o" target="_blank" rel="noopener">BBC final minutes</a></td></tr>
+<tr id="src10"><td class="num">10</td><td>SHOW</td><td>1</td><td><a href="https://www.reuters.com/business/environment/rescuers-search-survivors-after-devastating-nepal-flood-2026-08-27/" target="_blank" rel="noopener">Reuters search / Guo speed</a></td></tr>
+<tr id="src11"><td class="num">11</td><td>PLAY</td><td>1</td><td><a href="https://www.abc.net.au/news/2026/08-27/nepal-tibet-floods-landslide-maps-photos-videos/107083300" target="_blank" rel="noopener">ABC mapped CCTV package</a></td></tr>
+<tr id="src12"><td class="num">12</td><td>DISPLAY</td><td>1</td><td><a href="https://x.com/Geotactix/status/2095033208912130180" target="_blank" rel="noopener">X GeoPanda dam-talk</a></td></tr>
+<tr id="src13"><td class="num">13</td><td>DISPLAY</td><td>1</td><td><a href="https://x.com/amitv6hb/status/2095553699280191916" target="_blank" rel="noopener">X natural or manmade</a></td></tr>
+<tr id="src14"><td class="num">14</td><td>SHOW</td><td>2</td><td><a href="https://www.nytimes.com/2026/08/27/world/asia/nepal-flood-cause-landslide-glacier-collapse.html" target="_blank" rel="noopener">NYT Cook / Shugar bedrock</a></td></tr>
+<tr id="src15"><td class="num">15</td><td>SHOW</td><td>2</td><td><a href="https://www.usnews.com/news/world/articles/2026-08-27/scientists-find-clues-in-satellite-imagery-to-the-cause-of-catastrophic-floods-in-nepal-and-tibet" target="_blank" rel="noopener">US News satellite scientists</a></td></tr>
+<tr id="src16"><td class="num">16</td><td>SHOW</td><td>2</td><td><a href="https://www.firstpost.com/world/nepal-flood-tibet-glacier-collapse-langtang-lirung-mountain-slope-failure-landslide-satellite-imagery-14042031.html" target="_blank" rel="noopener">Firstpost / Takshashila</a></td></tr>
+<tr id="src17"><td class="num">17</td><td>SHOW</td><td>2</td><td><a href="https://news.cgtn.com/news/2026-09-01/Facts-and-science-behind-the-Nepal-mudslide-1Q5EL4kWiOI/p.html" target="_blank" rel="noopener">CGTN science narrative</a></td></tr>
+<tr id="src18"><td class="num">18</td><td>SHOW</td><td>2</td><td><a href="https://www.news18.com/explainers/liquid-concrete-flood-how-a-glacier-broke-off-and-plunged-1-2-km-to-devastate-nepal-ws-l-10297557.html" target="_blank" rel="noopener">News18 Aug 24 vs 26 frames</a></td></tr>
+<tr id="src19"><td class="num">19</td><td>SHOW</td><td>2</td><td><a href="https://www.wsj.com/science/environment/see-how-the-deadly-flooding-in-nepal-and-china-unfolded-93c25a12" target="_blank" rel="noopener">WSJ reconstruction</a></td></tr>
+<tr id="src20"><td class="num">20</td><td>SHOW</td><td>2</td><td><a href="https://nepalitimes.com/nepal-avalanche-was-live-on-drone-camera" target="_blank" rel="noopener">Nepali Times drone camera</a></td></tr>
+<tr id="src21"><td class="num">21</td><td>SHOW</td><td>2</td><td><a href="https://theprint.in/feature/nepal-rasuwa-floods-glacial-collapse-usgs/3026053/" target="_blank" rel="noopener">ThePrint USGS revision</a></td></tr>
+<tr id="src22"><td class="num">22</td><td>SHOW</td><td>2</td><td><a href="https://www.smh.com.au/world/asia/a-terrifying-roar-then-came-the-fury-of-the-flood-how-disaster-unfolded-in-nepal-20260827-p60s6n.html" target="_blank" rel="noopener">SMH / Petley seismic read</a></td></tr>
+<tr id="src23"><td class="num">23</td><td>SHOW</td><td>2</td><td><a href="https://theconversation.com/when-a-mountain-falls-how-ice-and-rock-triggered-nepals-catastrophic-flood-and-why-climate-change-is-raising-the-risks-290779" target="_blank" rel="noopener">The Conversation cascade</a></td></tr>
+<tr id="src24"><td class="num">24</td><td>SHOW</td><td>2</td><td><a href="https://www.downtoearth.org.in/natural-disasters/did-an-ice-rock-avalanche-originating-from-a-high-altitude-area-trigger-the-trishuli-flash-flood" target="_blank" rel="noopener">Down to Earth / ICIMOD +9 m</a></td></tr>
+<tr id="src25"><td class="num">25</td><td>SHOW</td><td>2</td><td><a href="https://thediplomat.com/2026/08/flash-flood-devastates-china-nepal-border-region/" target="_blank" rel="noopener">Diplomat / NDRRMA Planet Labs</a></td></tr>
+<tr id="src26"><td class="num">26</td><td>SHOW</td><td>2</td><td><a href="https://www.nature.com/articles/d41586-026-02716-w" target="_blank" rel="noopener">Nature 2026 vs 2015</a></td></tr>
+<tr id="src27"><td class="num">27</td><td>SHOW</td><td>3</td><td><a href="https://english.khabarhub.com/2025/10/484718/" target="_blank" rel="noopener">Khabarhub 2025 Pyurepu GLOF</a></td></tr>
+<tr id="src28"><td class="num">28</td><td>SHOW</td><td>3</td><td><a href="https://apnews.com/article/climate-change-nepal-flash-floods-7262dac22e31258955efa5c28c8fe917" target="_blank" rel="noopener">AP twice in 14 months</a></td></tr>
+<tr id="src29"><td class="num">29</td><td>SHOW</td><td>3</td><td><a href="https://www.indiatoday.in/world/story/nepal-flash-floods-icimod-says-ice-rock-avalanche-from-tibet-likely-trigger-ptag-2980684-2026-08-26" target="_blank" rel="noopener">India Today ICIMOD quote</a></td></tr>
+<tr id="src30"><td class="num">30</td><td>SHOW</td><td>3</td><td><a href="https://www.nytimes.com/2026/08/31/world/asia/china-nepal-tibet-flood-himalayas-risk.html" target="_blank" rel="noopener">NYT China prepared for one disaster</a></td></tr>
+<tr id="src31"><td class="num">31</td><td>SHOW</td><td>4</td><td><a href="https://www.theguardian.com/world/2026/sep/03/nepal-floods-rasuwagadhi-hydropower-hydro-tunnel-trapped-workers-search-rescue" target="_blank" rel="noopener">Guardian Rasuwagadhi chamber</a></td></tr>
+<tr id="src32"><td class="num">32</td><td>SHOW</td><td>4</td><td><a href="https://www.reuters.com/world/china/good-chance-that-trapped-workers-are-still-alive-nepal-hydropower-plant-official-2026-09-02/" target="_blank" rel="noopener">Reuters workers may be alive</a></td></tr>
+<tr id="src33"><td class="num">33</td><td>SHOW</td><td>4</td><td><a href="https://www.nytimes.com/2026/08/29/world/asia/nepal-flood-hydropower-tunnels-rescue-missing-workers.html" target="_blank" rel="noopener">NYT boring into tunnels</a></td></tr>
+<tr id="src34"><td class="num">34</td><td>SHOW</td><td>4</td><td><a href="https://www.aljazeera.com/news/2026/8/31/nepal-tunnel-traps-hinder-flood-rescue-how-many-are-dead-or-missing" target="_blank" rel="noopener">Al Jazeera tunnel explainer</a></td></tr>
+<tr id="src35"><td class="num">35</td><td>SHOW</td><td>4</td><td><a href="https://english.onlinekhabar.com/hydropower-project-tunnel-rescue.html" target="_blank" rel="noopener">OnlineKhabar seven-day status</a></td></tr>
+<tr id="src36"><td class="num">36</td><td>SHOW</td><td>4</td><td><a href="https://www.cnn.com/2026/08/30/asia/nepal-workers-flooded-hydro-tunnel-intl" target="_blank" rel="noopener">CNN tunnel survivor</a></td></tr>
+<tr id="src37"><td class="num">37</td><td>SHOW</td><td>4</td><td><a href="https://www.independent.co.uk/asia/south-asia/nepal-floods-hydropower-tunnels-trapped-workers-b3042308.html" target="_blank" rel="noopener">Independent controlled explosions</a></td></tr>
+<tr id="src38"><td class="num">38</td><td>SHOW</td><td>4</td><td><a href="https://en.wikipedia.org/wiki/2026_Nepal_floods" target="_blank" rel="noopener">Wikipedia 2026 Nepal floods</a></td></tr>
+<tr id="src39"><td class="num">39</td><td>SHOW</td><td>4</td><td><a href="https://www.theguardian.com/world/2026/aug/31/nepal-tibet-floods-rescuers-hundreds-trapped-hydropower" target="_blank" rel="noopener">Guardian Aug 31 tunnel focus</a></td></tr>
+<tr id="src40"><td class="num">40</td><td>DISPLAY</td><td>4</td><td><a href="https://x.com/uniindianews/status/2095036366841327711" target="_blank" rel="noopener">X UNI India tunnel flight</a></td></tr>
+<tr id="src41"><td class="num">41</td><td>DISPLAY</td><td>4</td><td><a href="https://x.com/OnlineKhabar_En/status/2095481546400784773" target="_blank" rel="noopener">X ambassador at Chilime</a></td></tr>
+<tr id="src42"><td class="num">42</td><td>SHOW</td><td>4</td><td><a href="https://www.indiatoday.in/world/story/rasuwagadhi-tunnel-rescue-nepal-no-survivors-933-workers-missing-2983871-2026-08-31" target="_blank" rel="noopener">India Today thermal drone</a></td></tr>
+<tr id="src43"><td class="num">43</td><td>SHOW</td><td>4</td><td><a href="https://www.telegraph.co.uk/world-news/2026/09/02/how-nepal-floods-became-ideological-battleground/" target="_blank" rel="noopener">Telegraph gorge / ideology</a></td></tr>
+<tr id="src44"><td class="num">44</td><td>SHOW</td><td>4</td><td><a href="https://www.stimson.org/2026/a-cascading-disaster-on-the-china-nepal-border-what-to-know-about-the-august-2026-rasuwa-flood/" target="_blank" rel="noopener">Stimson 72-hour briefing</a></td></tr>
+<tr id="src45"><td class="num">45</td><td>DISPLAY</td><td>4</td><td><a href="https://x.com/Zindagi262828/status/2095145019187622023" target="_blank" rel="noopener">X Rasuwagadhi rescue video</a></td></tr>
+<tr id="src46"><td class="num">46</td><td>DISPLAY</td><td>4</td><td><a href="https://x.com/ChrisWickNews/status/2095527236359062001" target="_blank" rel="noopener">X Chris Wick climate threshold</a></td></tr>
+<tr id="src47"><td class="num">47</td><td>SHOW</td><td>5</td><td><a href="https://www.ndtv.com/world-news/nepal-flash-floods-did-chinas-geological-disaster-dam-cause-floods-in-nepal-beijing-replies-11965346" target="_blank" rel="noopener">NDTV embassy dam denial</a></td></tr>
+<tr id="src48"><td class="num">48</td><td>SHOW</td><td>5</td><td><a href="https://www.moneycontrol.com/world/fake-news-china-rejects-nepal-s-dam-collapse-claim-over-flash-floods-that-killed-over-170-article-14016768.html" target="_blank" rel="noopener">Moneycontrol fake-news denial</a></td></tr>
+<tr id="src49"><td class="num">49</td><td>SHOW</td><td>5</td><td><a href="https://www.chinadaily.com.cn/a/202608/28/WS6a91ab0be4b06d4aa055b198.html" target="_blank" rel="noopener">China Daily embassy + USGS</a></td></tr>
+<tr id="src50"><td class="num">50</td><td>SHOW</td><td>5</td><td><a href="https://unbiasedgeopolitics.org/article/untitled-article-18" target="_blank" rel="noopener">Opinion essay — not a filing</a></td></tr>
+<tr id="src51"><td class="num">51</td><td>SHOW</td><td>5</td><td><a href="https://chinadigitaltimes.net/2026/09/information-controls-follow-catastrophic-flooding-in-gyirong-on-the-china-nepal-border/" target="_blank" rel="noopener">China Digital Times controls</a></td></tr>
+<tr id="src52"><td class="num">52</td><td>DISPLAY</td><td>5</td><td><a href="https://x.com/PranabG9317960/status/2095331897220210994" target="_blank" rel="noopener">X Chinese works as imbalance</a></td></tr>
+<tr id="src53"><td class="num">53</td><td>DISPLAY</td><td>5</td><td><a href="https://x.com/Talk_2_Sammy/status/2095484259914150283" target="_blank" rel="noopener">X should be investigated</a></td></tr>
+<tr id="src54"><td class="num">54</td><td>SHOW</td><td>6</td><td><a href="https://www.reuters.com/business/environment/before-flood-catastrophe-nepal-asked-china-early-warnings-risks-mounted-2026-08-30/" target="_blank" rel="noopener">Reuters May early-warning meeting</a></td></tr>
+<tr id="src55"><td class="num">55</td><td>SHOW</td><td>6</td><td><a href="https://www.techtimes.com/articles/325767/20260827/glacier-collapse-killed-353-nepal-current-warning-systems-cannot-detect-it.htm" target="_blank" rel="noopener">TechTimes sensors / unsigned pact</a></td></tr>
+<tr id="src56"><td class="num">56</td><td>SHOW</td><td>6</td><td><a href="https://india.mongabay.com/2026/08/nepal-disaster-reinforces-the-need-for-regional-preparedness/" target="_blank" rel="noopener">Mongabay regional strategy</a></td></tr>
+<tr id="src57"><td class="num">57</td><td>SHOW</td><td>6</td><td><a href="https://www.ndtv.com/india-news/key-mountain-development-institute-warns-of-second-flood-in-nepal-11963669" target="_blank" rel="noopener">NDTV Zhang second-flood warning</a></td></tr>
+<tr id="src58"><td class="num">58</td><td>SHOW</td><td>6</td><td><a href="https://www.cnn.com/2026/08/28/china/china-secondary-disaster-flood-lake-breach-intl-hnk" target="_blank" rel="noopener">CNN barrier lake</a></td></tr>
+<tr id="src59"><td class="num">59</td><td>SHOW</td><td>7</td><td><a href="https://www.reuters.com/world/china/china-identifies-countries-261-foreigners-missing-himalayan-mudslide-2026-08-30/" target="_blank" rel="noopener">Reuters 261 foreigners in Tibet</a></td></tr>
+<tr id="src60"><td class="num">60</td><td>SHOW</td><td>7</td><td><a href="https://www.aljazeera.com/news/2026/9/1/death-toll-from-devastating-floods-in-china-and-nepal-surpasses-1000" target="_blank" rel="noopener">Al Jazeera toll past 1,000</a></td></tr>
+<tr id="src61"><td class="num">61</td><td>SHOW</td><td>7</td><td><a href="https://www.reuters.com/business/environment/nepal-flash-flood-washes-away-villages-project-sites-near-tibet-border-2026-08-26/" target="_blank" rel="noopener">Reuters first day / SK workers</a></td></tr>
+<tr id="src62"><td class="num">62</td><td>SHOW</td><td>7</td><td><a href="https://www.thehindu.com/news/international/nepal-flash-floods-live-updates-death-toll-rescue-operations-missing-persons-helpline-number-september-3-2026/article71422150.ece" target="_blank" rel="noopener">The Hindu Sept 3 district table</a></td></tr>
+<tr id="src63"><td class="num">63</td><td>SHOW</td><td>7</td><td><a href="https://newsonair.gov.in/nepal-tibet-flood-death-toll-rises-to-1250/" target="_blank" rel="noopener">Akashvani / NDRRMA toll</a></td></tr>
+<tr id="src64"><td class="num">64</td><td>SHOW</td><td>7</td><td><a href="https://maritime-executive.com/article/flood-wipes-away-chinese-belt-and-road-border-port-in-nepal" target="_blank" rel="noopener">Maritime Executive Belt and Road port</a></td></tr>
+<tr id="src65"><td class="num">65</td><td>SHOW</td><td>7</td><td><a href="https://timesofindia.indiatimes.com/world/south-asia/nepal-flash-floods-relatives-hold-symbolic-funerals-for-thousands-missing-as-toll-crosses-1243/articleshow/133725449.cms" target="_blank" rel="noopener">Times of India symbolic rites</a></td></tr>
+<tr id="src66"><td class="num">66</td><td>SHOW</td><td>8</td><td><a href="https://www.theclimatebrink.com/p/what-we-can-and-cannot-say-about" target="_blank" rel="noopener">Climate Brink attribution limits</a></td></tr>
+<tr id="src67"><td class="num">67</td><td>SHOW</td><td>8</td><td><a href="https://thehimalayantimes.com/nepal/flood-danger-may-not-be-over-experts-warn-of-fresh-debris-flows-secondary-floods" target="_blank" rel="noopener">Himalayan Times secondary-flow risk</a></td></tr>
+</tbody></table>
+      </div>
+    </section>
+
+    <section id="docs">
+      <h2>Docs folder</h2>
+      <div class="card">
+        <p class="look">Local files next to this page. Snapshots are not a substitute for the live URL.</p>
+        <div class="btns">
+          <a class="btn" href="docs/nepal-flood-livestream-script.txt">Full script</a>
+          <a class="btn alt" href="docs/00-source-index.txt">Source index</a>
+          <a class="btn alt" href="docs/wikipedia-2026-nepal-floods.html">Wikipedia snapshot</a>
+          <a class="btn alt" href="docs/ap-glacier-collapse.html">AP glacier snapshot</a>
+          <a class="btn alt" href="docs/stimson-72-hour-briefing.html">Stimson snapshot</a>
+          <a class="btn alt" href="docs/conversation-mountain-falls.html">Conversation snapshot</a>
+          <a class="btn alt" href="docs/snopes-gyirong-cctv.html">Snopes snapshot</a>
+          <a class="btn alt" href="docs/nepalitimes-drone-camera.html">Nepali Times snapshot</a>
+          <a class="btn alt" href="docs/cgtn-science-narrative.html">CGTN snapshot</a>
+          <a class="btn alt" href="docs/chinadaily-embassy-debunk.html">China Daily snapshot</a>
+          <a class="btn alt" href="docs/climate-brink-attribution.html">Climate Brink snapshot</a>
+          <a class="btn alt" href="docs/kathmandupost-sept3-toll.html">Kathmandu Post snapshot</a>
+        </div>
+        <p class="tiny">Do not mix this <code>docs/</code> folder with the September 1 hearing PDFs from the Robinson pack.</p>
+      </div>
+    </section>
+
+    <footer>
+      TriggerSmart follow-along · August 26, 2026 Nepal–Tibet flood · alleged / reported · companion to nepal-flood-livestream-script.txt
+    </footer>
+  </div>
+</body>
+</html>

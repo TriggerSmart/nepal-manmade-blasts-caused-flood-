@@ -1,0 +1,72 @@
+# Nepal flood livestream — sources in exact script order
+# Checked 2026-09-03 from this environment.
+# live = HTTP 200 to a bot. bot-wall/paywall = publisher blocks automated fetch; URL is still the script link.
+# Repeats in the spoken script are not listed twice. First appearance only.
+n	cue	section	label	url	fetch
+1	PLAY	Intro	AFP Gyirong Port CCTV	https://www.youtube.com/watch?v=fqxOIZlj_0M	live
+2	PLAY	Intro	Independent CCTV package	https://www.youtube.com/watch?v=FFYBmDYQqoA	live
+3	SHOW	Intro	Snopes: footage authentic	https://www.snopes.com/fact-check/china-nepal-border-flooding/	live
+4	SHOW	Intro	AP — USGS M5.2 collapse, not quake	https://apnews.com/article/climate-change-nepal-tibet-glacier-collapse-floods-61b592d428e4631add31ce052d0daf1f	live
+5	SHOW	Intro	Kathmandu Post Sept 3 toll	https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for	live
+6	SHOW	1	India Today parking deck	https://www.indiatoday.in/world/story/gyirong-port-flood-cctv-tibet-border-mudslide-nepal-missing-travellers-2980448-2026-08-26	live
+7	SHOW	1	NYT interactive path	https://www.nytimes.com/interactive/2026/08/26/world/asia/nepal-china-flash-flood.html	paywall-or-bot
+8	SHOW	1	Reuters collapse-to-flood map	https://www.reuters.com/graphics/NEPAL-FLOODS/MAP/byvrdywwlve/	live
+9	SHOW	1	BBC final minutes	https://www.bbc.com/news/articles/c0qxw1qw3g7o	live
+10	SHOW	1	Reuters search / Guo speed	https://www.reuters.com/business/environment/rescuers-search-survivors-after-devastating-nepal-flood-2026-08-27/	bot-wall
+11	PLAY	1	ABC mapped CCTV package	https://www.abc.net.au/news/2026/08-27/nepal-tibet-floods-landslide-maps-photos-videos/107083300	live
+12	DISPLAY	1	X GeoPanda dam-talk	https://x.com/Geotactix/status/2095033208912130180	live
+13	DISPLAY	1	X natural or manmade	https://x.com/amitv6hb/status/2095553699280191916	live
+14	SHOW	2	NYT Cook / Shugar bedrock	https://www.nytimes.com/2026/08/27/world/asia/nepal-flood-cause-landslide-glacier-collapse.html	paywall-or-bot
+15	SHOW	2	US News satellite scientists	https://www.usnews.com/news/world/articles/2026-08-27/scientists-find-clues-in-satellite-imagery-to-the-cause-of-catastrophic-floods-in-nepal-and-tibet	flaky
+16	SHOW	2	Firstpost / Takshashila	https://www.firstpost.com/world/nepal-flood-tibet-glacier-collapse-langtang-lirung-mountain-slope-failure-landslide-satellite-imagery-14042031.html	bot-wall
+17	SHOW	2	CGTN science narrative	https://news.cgtn.com/news/2026-09-01/Facts-and-science-behind-the-Nepal-mudslide-1Q5EL4kWiOI/p.html	live
+18	SHOW	2	News18 Aug 24 vs 26 frames	https://www.news18.com/explainers/liquid-concrete-flood-how-a-glacier-broke-off-and-plunged-1-2-km-to-devastate-nepal-ws-l-10297557.html	bot-wall
+19	SHOW	2	WSJ reconstruction	https://www.wsj.com/science/environment/see-how-the-deadly-flooding-in-nepal-and-china-unfolded-93c25a12	paywall-or-bot
+20	SHOW	2	Nepali Times drone camera	https://nepalitimes.com/nepal-avalanche-was-live-on-drone-camera	live
+21	SHOW	2	ThePrint USGS revision	https://theprint.in/feature/nepal-rasuwa-floods-glacial-collapse-usgs/3026053/	live
+22	SHOW	2	SMH / Petley seismic read	https://www.smh.com.au/world/asia/a-terrifying-roar-then-came-the-fury-of-the-flood-how-disaster-unfolded-in-nepal-20260827-p60s6n.html	live
+23	SHOW	2	The Conversation cascade	https://theconversation.com/when-a-mountain-falls-how-ice-and-rock-triggered-nepals-catastrophic-flood-and-why-climate-change-is-raising-the-risks-290779	live
+24	SHOW	2	Down to Earth / ICIMOD +9 m	https://www.downtoearth.org.in/natural-disasters/did-an-ice-rock-avalanche-originating-from-a-high-altitude-area-trigger-the-trishuli-flash-flood	live
+25	SHOW	2	Diplomat / NDRRMA Planet Labs	https://thediplomat.com/2026/08/flash-flood-devastates-china-nepal-border-region/	live
+26	SHOW	2	Nature 2026 vs 2015	https://www.nature.com/articles/d41586-026-02716-w	live
+27	SHOW	3	Khabarhub 2025 Pyurepu GLOF	https://english.khabarhub.com/2025/10/484718/	live
+28	SHOW	3	AP twice in 14 months	https://apnews.com/article/climate-change-nepal-flash-floods-7262dac22e31258955efa5c28c8fe917	live
+29	SHOW	3	India Today ICIMOD quote	https://www.indiatoday.in/world/story/nepal-flash-floods-icimod-says-ice-rock-avalanche-from-tibet-likely-trigger-ptag-2980684-2026-08-26	live
+30	SHOW	3	NYT China prepared for one disaster	https://www.nytimes.com/2026/08/31/world/asia/china-nepal-tibet-flood-himalayas-risk.html	paywall-or-bot
+31	SHOW	4	Guardian Rasuwagadhi chamber	https://www.theguardian.com/world/2026/sep/03/nepal-floods-rasuwagadhi-hydropower-hydro-tunnel-trapped-workers-search-rescue	live
+32	SHOW	4	Reuters workers may be alive	https://www.reuters.com/world/china/good-chance-that-trapped-workers-are-still-alive-nepal-hydropower-plant-official-2026-09-02/	bot-wall
+33	SHOW	4	NYT boring into tunnels	https://www.nytimes.com/2026/08/29/world/asia/nepal-flood-hydropower-tunnels-rescue-missing-workers.html	paywall-or-bot
+34	SHOW	4	Al Jazeera tunnel explainer	https://www.aljazeera.com/news/2026/8/31/nepal-tunnel-traps-hinder-flood-rescue-how-many-are-dead-or-missing	live
+35	SHOW	4	OnlineKhabar seven-day status	https://english.onlinekhabar.com/hydropower-project-tunnel-rescue.html	live
+36	SHOW	4	CNN tunnel survivor	https://www.cnn.com/2026/08/30/asia/nepal-workers-flooded-hydro-tunnel-intl	live
+37	SHOW	4	Independent controlled explosions	https://www.independent.co.uk/asia/south-asia/nepal-floods-hydropower-tunnels-trapped-workers-b3042308.html	live
+38	SHOW	4	Wikipedia 2026 Nepal floods	https://en.wikipedia.org/wiki/2026_Nepal_floods	live
+39	SHOW	4	Guardian Aug 31 tunnel focus	https://www.theguardian.com/world/2026/aug/31/nepal-tibet-floods-rescuers-hundreds-trapped-hydropower	live
+40	DISPLAY	4	X UNI India tunnel flight	https://x.com/uniindianews/status/2095036366841327711	live
+41	DISPLAY	4	X ambassador at Chilime	https://x.com/OnlineKhabar_En/status/2095481546400784773	live
+42	SHOW	4	India Today thermal drone	https://www.indiatoday.in/world/story/rasuwagadhi-tunnel-rescue-nepal-no-survivors-933-workers-missing-2983871-2026-08-31	live
+43	SHOW	4	Telegraph gorge / ideology	https://www.telegraph.co.uk/world-news/2026/09/02/how-nepal-floods-became-ideological-battleground/	live
+44	SHOW	4	Stimson 72-hour briefing	https://www.stimson.org/2026/a-cascading-disaster-on-the-china-nepal-border-what-to-know-about-the-august-2026-rasuwa-flood/	live
+45	DISPLAY	4	X Rasuwagadhi rescue video	https://x.com/Zindagi262828/status/2095145019187622023	live
+46	DISPLAY	4	X Chris Wick climate threshold	https://x.com/ChrisWickNews/status/2095527236359062001	live
+47	SHOW	5	NDTV embassy dam denial	https://www.ndtv.com/world-news/nepal-flash-floods-did-chinas-geological-disaster-dam-cause-floods-in-nepal-beijing-replies-11965346	bot-wall
+48	SHOW	5	Moneycontrol fake-news denial	https://www.moneycontrol.com/world/fake-news-china-rejects-nepal-s-dam-collapse-claim-over-flash-floods-that-killed-over-170-article-14016768.html	live
+49	SHOW	5	China Daily embassy + USGS	https://www.chinadaily.com.cn/a/202608/28/WS6a91ab0be4b06d4aa055b198.html	live
+50	SHOW	5	Opinion essay — not a filing	https://unbiasedgeopolitics.org/article/untitled-article-18	live
+51	SHOW	5	China Digital Times controls	https://chinadigitaltimes.net/2026/09/information-controls-follow-catastrophic-flooding-in-gyirong-on-the-china-nepal-border/	bot-wall
+52	DISPLAY	5	X Chinese works as imbalance	https://x.com/PranabG9317960/status/2095331897220210994	live
+53	DISPLAY	5	X should be investigated	https://x.com/Talk_2_Sammy/status/2095484259914150283	live
+54	SHOW	6	Reuters May early-warning meeting	https://www.reuters.com/business/environment/before-flood-catastrophe-nepal-asked-china-early-warnings-risks-mounted-2026-08-30/	bot-wall
+55	SHOW	6	TechTimes sensors / unsigned pact	https://www.techtimes.com/articles/325767/20260827/glacier-collapse-killed-353-nepal-current-warning-systems-cannot-detect-it.htm	live
+56	SHOW	6	Mongabay regional strategy	https://india.mongabay.com/2026/08/nepal-disaster-reinforces-the-need-for-regional-preparedness/	bot-wall
+57	SHOW	6	NDTV Zhang second-flood warning	https://www.ndtv.com/india-news/key-mountain-development-institute-warns-of-second-flood-in-nepal-11963669	bot-wall
+58	SHOW	6	CNN barrier lake	https://www.cnn.com/2026/08/28/china/china-secondary-disaster-flood-lake-breach-intl-hnk	live
+59	SHOW	7	Reuters 261 foreigners in Tibet	https://www.reuters.com/world/china/china-identifies-countries-261-foreigners-missing-himalayan-mudslide-2026-08-30/	bot-wall
+60	SHOW	7	Al Jazeera toll past 1,000	https://www.aljazeera.com/news/2026/9/1/death-toll-from-devastating-floods-in-china-and-nepal-surpasses-1000	live
+61	SHOW	7	Reuters first day / SK workers	https://www.reuters.com/business/environment/nepal-flash-flood-washes-away-villages-project-sites-near-tibet-border-2026-08-26/	bot-wall
+62	SHOW	7	The Hindu Sept 3 district table	https://www.thehindu.com/news/international/nepal-flash-floods-live-updates-death-toll-rescue-operations-missing-persons-helpline-number-september-3-2026/article71422150.ece	live
+63	SHOW	7	Akashvani / NDRRMA toll	https://newsonair.gov.in/nepal-tibet-flood-death-toll-rises-to-1250/	live
+64	SHOW	7	Maritime Executive Belt and Road port	https://maritime-executive.com/article/flood-wipes-away-chinese-belt-and-road-border-port-in-nepal	live
+65	SHOW	7	Times of India symbolic rites	https://timesofindia.indiatimes.com/world/south-asia/nepal-flash-floods-relatives-hold-symbolic-funerals-for-thousands-missing-as-toll-crosses-1243/articleshow/133725449.cms	live
+66	SHOW	8	Climate Brink attribution limits	https://www.theclimatebrink.com/p/what-we-can-and-cannot-say-about	live
+67	SHOW	8	Himalayan Times secondary-flow risk	https://thehimalayantimes.com/nepal/flood-danger-may-not-be-over-experts-warn-of-fresh-debris-flows-secondary-floods	live
